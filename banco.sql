@@ -1,10 +1,11 @@
 CREATE DATABASE IF NOT EXISTS 'SystemBarber';
 
-CREATE TABLE IF NOT EXISTS 'Users' (
-	´id´ int() NOT NULL PRIMARY AUTO_INCREMENT,
-    ´email´ varchar(100) NOT NULL,
-    ´password´ varchar NOT NULL(255),
-); 
+CREATE TABLE usuarios (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100)
+);
 
 INSERT INTO users (email, senha) VALUES ("teste", aes_encrypt("abc123","key"));
 

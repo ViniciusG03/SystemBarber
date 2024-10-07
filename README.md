@@ -10,7 +10,7 @@ SystemBarber é um projeto desenvolvido no âmbito acadêmico, com o objetivo de
 
 ## Tecnologias Utilizadas
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Java
+- **Backend**: Java, Spring Boot, Spring Security, JPA
 - **Banco de Dados**: MySQL
 
 O projeto visa melhorar a experiência de agendamento tanto para os clientes quanto para os profissionais das barbearias, otimizando a gestão de horários e promovendo maior conveniência para todos os envolvidos.

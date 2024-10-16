@@ -35,4 +35,16 @@ public class Usuario {
     public String getNome() {
         return nome;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }

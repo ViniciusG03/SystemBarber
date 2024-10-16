@@ -1,7 +1,9 @@
 package org.menosprezo.systembarber.controller;
 
+import org.menosprezo.systembarber.dto.CadastroRequestDTO;
 import org.menosprezo.systembarber.dto.LoginRequestDTO;
 import org.menosprezo.systembarber.dto.LoginResponseDTO;
+import org.menosprezo.systembarber.dto.MessageResponseDTO;
 import org.menosprezo.systembarber.model.Usuario;
 import org.menosprezo.systembarber.security.JwtUtil;
 import org.menosprezo.systembarber.service.UsuarioService;
@@ -31,6 +33,20 @@ public class AuthController {
             return ResponseEntity.status(404).body(new LoginResponseDTO(null, "Usuário não encontrado"));
         } catch (BadCredentialsException e) {
             return ResponseEntity.status(401).body(new LoginResponseDTO(null, "Credenciais inválidas"));
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:5500")
+    @PostMapping("/cadastro")
+    public ResponseEntity<?> cadastrarUsuario(@RequestBody CadastroRequestDTO cadastroRequestDTO) {
+        try {
+            if (cadastroRequestDTO.getPassword() == null) {
+                return ResponseEntity.status(400).body(new MessageResponseDTO("A senha não pode ser nula"));
+            }
+            usuarioService.cadastrarUsuario(cadastroRequestDTO);
+            return ResponseEntity.ok().body(new MessageResponseDTO("Usuário cadastrado com sucesso"));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(new MessageResponseDTO("Erro ao cadastrar usuário: " + e.getMessage()));
         }
     }
 }

@@ -25,36 +25,8 @@
             <label for="confirm-password">Confirmar Senha</label>
             <input type="password" id="confirm-password" name="confirm-password" >
             <button type="submit" id="buttonCadastrar">Cadastrar</button>
-
-
         </form>
     </div>
 </body>
-
-<script>
-    let nome = document.querySelector("#name");
-    let email = document.querySelector("#email");
-    let emailConfirm = document.querySelector("#confirm-email");
-    let senha = document.querySelector("#password");
-    let senhaConfirm = document.querySelector("#confirm-password");
-    let buttonCadastrar = document.querySelector("#buttonCadastrar");
-
-    buttonCadastrar.addEventListener("click",()=>{
-        if(nome.value == ""){
-            alert("Por favor digite o seu nome")
-        } else if(email.value == ""){
-            alert("Por favor digite o seu email")
-        } else if(emailConfirm.value == ""){
-            alert("Por favor confirme o seu email")
-        } else if(emailConfirm != email){
-            alert("A confirmação do email está inválida")
-        } else if(senha.value == ""){
-            alert("Por favor digite a sua senha")
-        } else if(senhaConfirm.value == ""){
-            alert("Por favor confirme a sua senha ")
-        } else if(senhaConfirm != senha){
-            alert("A confirmação do email está inválida")
-        }
-    })
-</script>
+<script src="../js/cadastroValidate.js"></script>
 </html>

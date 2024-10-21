@@ -1,11 +1,9 @@
 package org.menosprezo.systembarber.controller;
 
-import org.menosprezo.systembarber.dto.CadastroRequestDTO;
-import org.menosprezo.systembarber.dto.LoginRequestDTO;
-import org.menosprezo.systembarber.dto.LoginResponseDTO;
-import org.menosprezo.systembarber.dto.MessageResponseDTO;
+import org.menosprezo.systembarber.dto.*;
 import org.menosprezo.systembarber.model.Usuario;
 import org.menosprezo.systembarber.security.JwtUtil;
+import org.menosprezo.systembarber.service.MailgunEmailService;
 import org.menosprezo.systembarber.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +16,9 @@ public class AuthController {
 
     @Autowired
     private UsuarioService usuarioService;
+
+    @Autowired
+    private MailgunEmailService mailgunEmailService;
 
     @Autowired
     private JwtUtil jwtUtil;
@@ -49,4 +50,34 @@ public class AuthController {
             return ResponseEntity.status(400).body(new MessageResponseDTO("Erro ao cadastrar usuário: " + e.getMessage()));
         }
     }
+
+    @CrossOrigin(origins = "http://localhost:5500")
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordRequestDTO forgotPasswordRequestDTO) {
+        try {
+            String email = forgotPasswordRequestDTO.getEmail();
+            String resetLink = "http://localhost:8080/api/auth/reset-password?token=" + "token-gerado";
+
+            String subject = "Redefinição de Senha";
+            String text = "Olá,\n\nClique no link abaixo para redefinir sua senha:\n" + resetLink;
+
+            mailgunEmailService.enviarEmail(email, subject, text);
+
+            return ResponseEntity.ok().body(new MessageResponseDTO("Link de recuperação de senha enviado para o email"));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body(new MessageResponseDTO("Erro ao enviar email: " + e.getMessage()));
+        }
+    }
+
+    @CrossOrigin(origins = "http://localhost:5500")
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordRequestDTO resetPasswordRequestDTO) {
+        try {
+            usuarioService.redefinirSenha(resetPasswordRequestDTO);
+            return ResponseEntity.ok().body(new MessageResponseDTO("Senha redefinida com sucesso"));
+        } catch (Exception e) {
+            return ResponseEntity.status(400).body("Erro ao redefinir senha: " + e.getMessage());
+        }
+    }
+
 }

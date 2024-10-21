@@ -37,6 +37,12 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+    implementation("org.springframework.boot:spring-boot-starter-mail:3.3.4")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.2")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.3")
+    implementation("org.apache.httpcomponents.core5:httpcore5:5.3")
+
+
 }
 
 tasks.withType<Test> {

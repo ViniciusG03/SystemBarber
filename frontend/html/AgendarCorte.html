@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Barbeiro</title>
+    <link rel="stylesheet" href="AgendarCorte.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="System Barber">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">SEJA PARTE</a></li>
+            <li><a href="#">BARBEARIAS PARCEIRAS</a></li>
+            <li><a href="#">BRASÍLIA - DF</a></li>
+            <li><a href="#">ENTRAR</a></li>
+            <li><button class="register-button">REGISTRE-SE</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>AGENDAR</h1>
+        <h2>Nome da Barbearia</h2>
+        <p>Informe seus dados para prosseguir com o agendamento.</p>
+    
+        <div class="form-container">
+            <div class="form-row">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Matheus">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" placeholder="example@email.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label for="telefone">Telefone para contato</label>
+                    <input type="text" id="telefone" placeholder="(61) 90000-0000">
+                </div>
+                <div>
+                    <label for="pagamento">Forma de Pagamento</label>
+                    <select id="pagamento">
+                        <option>Selecione uma Opção</option>
+                        <option>Cartão de Crédito</option>
+                        <option>Boleto Bancário</option>
+                        <option>Pix</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button">Agendar</button>
+        </div>
+        <div class="contato">
+            <h3>Alguma dúvida?</h3>
+            <p>Telefone de contato estabelecido pela Barbearia</p>
+            <div class="contato-item">
+              <span class="icon">✉️</span>
+              <span class="texto">Email: barbearia@gmail.com</span>
+            </div>
+            <div class="contato-item">
+              <span class="icon"></span>
+              <span class="texto">(61) 9000-0000</span>
+            </div>
+          </div>
+    </div>
+    
+    
+</body>
+</html>

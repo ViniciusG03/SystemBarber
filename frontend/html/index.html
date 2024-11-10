@@ -15,12 +15,10 @@
         <header>
             <nav>
                 <ul>
-                    <li><img src="../images/logo.png" alt="System Barber" width="100px" height="100px"></li>
+                    <li><img src="../images/logo.png" alt="System Barber" height="40px"></li>
                     <li><a href="sejaparte.html">SEJA PARTE</a></li>
-                    <li>BARBEARIA PARCEIRAS</li>
-                    <li>BRASILIA - DF</li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="cadastro.html">CADASTRO</a></li>
+                    <li><a href="login.html">ENTRAR</a></li>
+                    <li><a href="cadastro.html">REGISTRE-SE</a></li>
                 </ul>
             </nav>
         </header>
@@ -29,10 +27,12 @@
             <h1>BARBEARIA SYSTEM</h1>
             <p>O Software visa automatizar o agendamento de cortes de cabelo, possibilitando cadastrar Barbearias e Salões, permitindo que o usuário marque o dia e horário na barbearia e no Salão desejado</p>
             <h3>Pesquisar barbearias por localização:</h3>
-            <input type="text" id="localizacao" placeholder="Digite a cidade ou região">
-            <button onclick="buscarBarbearias()">Pesquisar</button>
+            <div class="search-bar">
+                <input type="text" id="localizacao" placeholder="Digite a cidade ou região">
+                <button onclick="buscarBarbearias()">Pesquisar</button>
+            </div>
         </div>
-
+        
         <section id="resultados">
             <!-- Os cards das barbearias serão inseridos aqui dinamicamente -->
         </section>
@@ -45,7 +45,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Sobradinho - DF</p> <br>
-                    <a href="#">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=1">Conferir horários disponíveis -></a>
                 </div>
             </div>
             <div class="cards">
@@ -55,7 +55,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Asa Norte - DF</p> <br>
-                    <a href="#">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=3">Conferir horários disponíveis -></a>
                 </div>
 
             </div>
@@ -66,7 +66,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Noroeste - DF</p> <br>
-                    <a href="#">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=2">Conferir horários disponíveis -></a>
                 </div>
 
             </div>
@@ -79,7 +79,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Sobradinho - DF</p>  <br>
-                    <a href="../html/perfilBarbearia.html">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=4">Conferir horários disponíveis -></a>
                 </div>
             </div>
             <div class="cards">
@@ -89,7 +89,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Asa Norte - DF</p>  <br>
-                    <a href="#">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=5">Conferir horários disponíveis -></a>
                 </div>
                 
             </div>
@@ -100,7 +100,7 @@
                     <p>aberto: segunda a domingo</p>
                     <p>09:00 às 18:00</p>
                     <p>Noroeste - DF</p>  <br>
-                    <a href="#">Conferir horarios disponíveis -> </a>
+                    <a href="perfilBarbearia.html?id=6">Conferir horários disponíveis -></a>
                 </div>
                
             </div>

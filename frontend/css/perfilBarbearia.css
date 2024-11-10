@@ -15,7 +15,7 @@ main{
 header{
     width: 100%;
     height: 800px;
-    background-image: url(../images/imgFundoJDantas2.png);
+    /* background-image: url(../images/imgFundoJDantas2.png); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -77,9 +77,47 @@ h1{
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Efeito de hover com zoom e brilho */
+
 .fotosGaleria img:hover{
-    transform: scale(1.05); /* Zoom suave */
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2); /* Sombra clara ao redor */
-    filter: brightness(1.2); /* Aumenta o brilho da imagem */
+    transform: scale(1.05); 
+    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2); 
+    filter: brightness(1.2); 
+}
+
+.agendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: white;
+}
+
+.agendar-texto h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.agendar-texto p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.botao-agendar {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 5px;
+    background-color: #57596b5c;
+    box-shadow: 0px 5px 15px rgba(56, 46, 50, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.botao-agendar:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(56, 46, 50, 0.4);
+    background-color: #57596b5c;
 }

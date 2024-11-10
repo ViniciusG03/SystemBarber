@@ -3,7 +3,7 @@ async function buscarBarbearias() {
     const localizacao = document.getElementById("localizacao").value;
 
     // Envia a requisição para o backend
-    const response = await fetch(`http://localhost:8080/api/barbearias?localizacao=${encodeURIComponent(localizacao)}`);
+    const response = await fetch(`http://localhost:8080/api/barbearias/buscar?localizacao=${encodeURIComponent(localizacao)}`);
     const barbearias = await response.json();
 
     // Limpa os resultados anteriores
@@ -16,16 +16,16 @@ async function buscarBarbearias() {
         card.className = "cards";
 
         card.innerHTML = `
-            <img src="../images/default.jpg" alt="Foto da barbearia">
+            <img src="../images/img1.jpg" alt="Foto da barbearia">
             <div>
                 <h3>${barbearia.nome}</h3> <br>
                 <p>Aberto: ${barbearia.horarioFuncionamento}</p>
                 <p>${barbearia.localizacao}</p>
-                <p>${barbearia.contato}</p> <br>
-                <a href="#">Conferir horários disponíveis -></a>
+                <p>${barbearia.diasServico}</p> <br>
+                <a href="perfilBarbearia.html?id=${barbearia.id}">Conferir horários disponíveis -></a>
             </div>
         `;
 
         resultados.appendChild(card);
-    });
+    });  
 }

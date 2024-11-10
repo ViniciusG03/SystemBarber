@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/perfilBarbearia.css">
-    <title>Document</title>
+    <title>Perfil da Barbearia</title>
 </head>
 <body>
     <main>
@@ -12,33 +12,67 @@
             <nav>
                 <ul>
                     <li>Seja Parte</li>
-                    <li>Barbearia Parceiras</li>
-                    <li>Brasília - DF</li>
-                    <li>|</li>
+                    <li>Home</li>
                     <li>Entrar</li>
                     <li><button>Cadastrar</button></li>
                 </ul>
             </nav>
             <div id="infoBarbearia">
                 <div id="infos">
-                    <h1>Barbearia J Dantas</h1>
-                    <p>Barbearia localizada na quadra 8 de Sobradinho I</p>
-                    <p>Cortes com preços justos</p>
+                    <h1></h1>
+                    <p></p>
+                    <p></p>
                 </div>
-                
             </div>
         </header>
         <section id="galeria">
             <h1>Galeria</h1>
             <div class="fotosGaleria">
-                <img src="../images/img1Galeria.jpeg" alt="">
-                <img src="../images/img1Galeria.jpeg" alt="">
+                <!-- Imagens carregadas dinamicamente aparecerão aqui -->
             </div>
-            <div class="fotosGaleria">
-                <img src="../images/img1Galeria.jpeg" alt="">
-                <img src="../images/img1Galeria.jpeg" alt="">
+            <div class="agendar-container">
+                <div class="agendar-texto">
+                    <h1>Agendar Horário</h1>
+                    <p>Gostou dos cortes? Agende já seu horário!</p>
+                </div>
+                <a href="AgendarCorte.html" class="botao-agendar">Agendar Horário</a>
             </div>
         </section>
     </main>
+    <script src="../js/carregarBackground.js"></script>
+    <script src="../js/carregarFotos.js"></script>
+    <script>
+        async function carregarPerfilBarbearia() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+    
+            if (id) {
+                try {
+                    const response = await fetch(`http://localhost:8080/api/barbearias/${id}`);
+                    
+                    if (!response.ok) {
+                        throw new Error('Barbearia não encontrada');
+                    }
+    
+                    const barbearia = await response.json();
+    
+                    document.querySelector("#infoBarbearia h1").textContent = barbearia.nome;
+                    document.querySelector("#infoBarbearia p:nth-of-type(1)").textContent = barbearia.localizacao;
+                    document.querySelector("#infoBarbearia p:nth-of-type(2)").textContent = barbearia.formasPagamento || "Informações adicionais não disponíveis.";
+    
+                } catch (error) {
+                    console.error("Erro ao carregar a barbearia:", error);
+                }
+            } else {
+                console.error("ID da barbearia não encontrado na URL");
+            }
+        }
+    
+        window.onload = () => {
+            carregarPerfilBarbearia();
+            carregarBackgroundImagem();
+            carregarImagensCortesMasculinos();
+        };
+    </script>
 </body>
 </html>

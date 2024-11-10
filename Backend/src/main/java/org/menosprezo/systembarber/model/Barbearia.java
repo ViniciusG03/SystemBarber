@@ -31,9 +31,8 @@ public class Barbearia {
     private String formasPagamento;
 
     @NotBlank(message = "Quantidade de funcionários é obrigatória")
-    @Enumerated(EnumType.STRING)
     @Column(name = "quantidade_funcionarios")
-    private QuantidadeFuncionarios quantidadeFuncionarios;
+    private String quantidadeFuncionarios;
 
     @NotBlank(message = "Proprietário é obrigatório")
     @Size(max = 100, message = "O nome do proprietário deve ter no máximo 100 caracteres")
@@ -43,10 +42,8 @@ public class Barbearia {
     @Size(max = 100, message = "A localização deve ter no máximo 100 caracteres")
     private String localizacao;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "dias_servico", nullable = false)
-
-    private DiasServico diasServico;
+    private String diasServico;
 
     @Size(max = 20, message = "O horário de funcionamento deve ter no máximo 20 caracteres")
     private String horarioFuncionamento;
@@ -93,11 +90,11 @@ public class Barbearia {
         this.formasPagamento = formasPagamento;
     }
 
-    public QuantidadeFuncionarios getQuantidadeFuncionarios() {
+    public String getQuantidadeFuncionarios() {
         return quantidadeFuncionarios;
     }
 
-    public void setQuantidadeFuncionarios(QuantidadeFuncionarios quantidadeFuncionarios) {
+    public void setQuantidadeFuncionarios(String quantidadeFuncionarios) {
         this.quantidadeFuncionarios = quantidadeFuncionarios;
     }
 
@@ -117,11 +114,11 @@ public class Barbearia {
         this.localizacao = localizacao;
     }
 
-    public DiasServico getDiasServico() {
+    public String getDiasServico() {
         return diasServico;
     }
 
-    public void setDiasServico(DiasServico diasServico) {
+    public void setDiasServico(String diasServico) {
         this.diasServico = diasServico;
     }
 
@@ -132,36 +129,4 @@ public class Barbearia {
     public void setHorarioFuncionamento(String horarioFuncionamento) {
         this.horarioFuncionamento = horarioFuncionamento;
     }
-
-    // Enums para Quantidade de Funcionários e Dias de Serviço
-    public enum QuantidadeFuncionarios {
-        UM_A_DOIS_FUNCIONARIOS("1 a 2 Funcionarios"),
-        UM_A_QUATRO_FUNCIONARIOS("1 a 4 Funcionarios"),
-        UM_A_SEIS_OU_MAIS("1 a 6 ou +");
-
-        private final String descricao;
-
-        QuantidadeFuncionarios(String descricao) {
-            this.descricao = descricao;
-        }
-
-        public String getDescricao() {
-            return descricao;
-        }
-
-        public static QuantidadeFuncionarios fromDescricao(String descricao) {
-            for (QuantidadeFuncionarios quantidade : QuantidadeFuncionarios.values()) {
-                if (quantidade.descricao.equalsIgnoreCase(descricao)) {
-                    return quantidade;
-                }
-            }
-            throw new IllegalArgumentException("No enum constant for description: " + descricao);
-        }
-    }
-
-    public enum DiasServico {
-        SEGUNDA_A_SEXTA,
-        TODOS_OS_DIAS
-    }
-
 }

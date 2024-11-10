@@ -36,6 +36,7 @@ public class BarbeariaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/todas")
     public ResponseEntity<List<Barbearia>> listarTodasBarbearias() {
         return ResponseEntity.ok(barbeariaService.listarTodas());
     }

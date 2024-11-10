@@ -2,7 +2,6 @@ package org.menosprezo.systembarber.service;
 
 import org.menosprezo.systembarber.dto.BarbeariaDTO;
 import org.menosprezo.systembarber.model.Barbearia;
-import org.menosprezo.systembarber.model.Barbearia.QuantidadeFuncionarios;
 import org.menosprezo.systembarber.repository.BarbeariaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,11 +62,19 @@ public class BarbeariaServiceImpl implements BarbeariaService {
         barbearia.setEmail(dto.getEmail());
         barbearia.setTelefone(dto.getTelefone());
         barbearia.setFormasPagamento(dto.getFormasPagamento());
-        barbearia.setQuantidadeFuncionarios(QuantidadeFuncionarios.fromDescricao(dto.getQuantidadeFuncionarios()));
+
+        // Define quantidade de funcionários diretamente
+        barbearia.setQuantidadeFuncionarios(dto.getQuantidadeFuncionarios());
+
         barbearia.setProprietario(dto.getProprietario());
         barbearia.setLocalizacao(dto.getLocalizacao());
-        barbearia.setDiasServico(Barbearia.DiasServico.valueOf(dto.getDiasServico()));
+
+        // Define dias de serviço diretamente
+        barbearia.setDiasServico(dto.getDiasServico());
+
         barbearia.setHorarioFuncionamento(dto.getHorarioFuncionamento());
     }
+
+
 
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,98 +8,105 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <title>Document</title>
+    <title>System Barber</title>
 </head>
-
 <body>
     <main>
         <header>
             <nav>
                 <ul>
-                    <li>Company Logo</li>
-                    <li>SEJA PARTE</li>
+                    <li><img src="../images/logo.png" alt="System Barber" width="100px" height="100px"></li>
+                    <li><a href="sejaparte.html">SEJA PARTE</a></li>
                     <li>BARBEARIA PARCEIRAS</li>
                     <li>BRASILIA - DF</li>
-                    <li><a href="../html/login.html">LOGIN</a></li>
-                    <li><a href="../html/cadastro.html">CADASTRO</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="cadastro.html">CADASTRO</a></li>
                 </ul>
             </nav>
         </header>
-        <div>
-            <div id="info">
-                <h1>BARBEARIA SYSTEM</h1>
-                <p>O Software visa automatizar o agendamento de cortes de cabelo, possibilitando cadastrar Barbearias e Salões, permitindo que o usuário marque o dia e horário na barbearia e no Salão desejado</p>
-                <h3>Barbearias e salões:</h3>
-            </div>
-            <section>
-                <div class="cards">
-                    <img src="../images/img1.jpg" alt="foto barbearia the boss">
-                    <div>
-                        <h3>The Boss Barbearia</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Sobradinho - DF</p> <br>
-                        <a href="#">Conferir horarios disponíveis -> </a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <img src="../images/img2.jpg" alt="foto barbearia dom marques">
-                    <div>
-                        <h3>Barbearia Dom Marquês</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Asa Norte - DF</p> <br>
-                        <a href="#">Conferir horarios disponíveis -> </a>
-                    </div>
+        
+        <div id="info">
+            <h1>BARBEARIA SYSTEM</h1>
+            <p>O Software visa automatizar o agendamento de cortes de cabelo, possibilitando cadastrar Barbearias e Salões, permitindo que o usuário marque o dia e horário na barbearia e no Salão desejado</p>
+            <h3>Pesquisar barbearias por localização:</h3>
+            <input type="text" id="localizacao" placeholder="Digite a cidade ou região">
+            <button onclick="buscarBarbearias()">Pesquisar</button>
+        </div>
 
-                </div>
-                <div class="cards">
-                    <img src="../images/img3.jpg" alt="foto barbearia cerrado noroeste">
-                    <div>
-                        <h3>Cerrado Barbearia Nordeste</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Noroeste - DF</p> <br>
-                        <a href="#">Conferir horarios disponíveis -> </a>
-                    </div>
-
-                </div>
-            </section>
-            <section>
-                <div class="cards">
-                    <img src="../images/imgFundoJDantas.webp" alt="foto barbearia J dantas">
-                    <div>
-                        <h3>Barbearia J. Dantas</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Sobradinho - DF</p>  <br>
-                        <a href="../html/perfilBarbearia.html">Conferir horarios disponíveis -> </a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <img src="../images/img5.png" alt="foto barbearia dom marques">
-                    <div>
-                        <h3>Salão Azze</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Asa Norte - DF</p>  <br>
-                        <a href="#">Conferir horarios disponíveis -> </a>
-                    </div>
-                    
-                </div>
-                <div class="cards">
-                    <img src="../images/img6.jpeg" alt="foto barbearia cerrado noroeste">
-                    <div>
-                        <h3>Barbearia Dom Cabral</h3> <br>
-                        <p>aberto: segunda a domingo</p>
-                        <p>09:00 às 18:00</p>
-                        <p>Noroeste - DF</p>  <br>
-                        <a href="#">Conferir horarios disponíveis -> </a>
-                    </div>
-                   
-                </div>
+        <section id="resultados">
+            <!-- Os cards das barbearias serão inseridos aqui dinamicamente -->
         </section>
-    </main>
-</body>
 
+        <section>
+            <div class="cards">
+                <img src="../images/img1.jpg" alt="foto barbearia the boss">
+                <div>
+                    <h3>The Boss Barbearia</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Sobradinho - DF</p> <br>
+                    <a href="#">Conferir horarios disponíveis -> </a>
+                </div>
+            </div>
+            <div class="cards">
+                <img src="../images/img2.jpg" alt="foto barbearia dom marques">
+                <div>
+                    <h3>Barbearia Dom Marquês</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Asa Norte - DF</p> <br>
+                    <a href="#">Conferir horarios disponíveis -> </a>
+                </div>
+
+            </div>
+            <div class="cards">
+                <img src="../images/img3.jpg" alt="foto barbearia cerrado noroeste">
+                <div>
+                    <h3>Cerrado Barbearia Nordeste</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Noroeste - DF</p> <br>
+                    <a href="#">Conferir horarios disponíveis -> </a>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div class="cards">
+                <img src="../images/imgFundoJDantas.webp" alt="foto barbearia J dantas">
+                <div>
+                    <h3>Barbearia J. Dantas</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Sobradinho - DF</p>  <br>
+                    <a href="../html/perfilBarbearia.html">Conferir horarios disponíveis -> </a>
+                </div>
+            </div>
+            <div class="cards">
+                <img src="../images/img5.png" alt="foto barbearia dom marques">
+                <div>
+                    <h3>Salão Azze</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Asa Norte - DF</p>  <br>
+                    <a href="#">Conferir horarios disponíveis -> </a>
+                </div>
+                
+            </div>
+            <div class="cards">
+                <img src="../images/img6.jpeg" alt="foto barbearia cerrado noroeste">
+                <div>
+                    <h3>Barbearia Dom Cabral</h3> <br>
+                    <p>aberto: segunda a domingo</p>
+                    <p>09:00 às 18:00</p>
+                    <p>Noroeste - DF</p>  <br>
+                    <a href="#">Conferir horarios disponíveis -> </a>
+                </div>
+               
+            </div>
+    </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+</body>
 </html>

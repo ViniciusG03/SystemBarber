@@ -41,8 +41,8 @@ dependencies {
     implementation("org.apache.httpcomponents.client5:httpclient5:5.2")
     implementation("org.apache.httpcomponents.client5:httpclient5:5.3")
     implementation("org.apache.httpcomponents.core5:httpcore5:5.3")
-
-
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation("javax.validation:validation-api:2.0.1.Final")
 }
 
 tasks.withType<Test> {

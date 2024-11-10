@@ -111,10 +111,10 @@ p {
 input[type="text"],
 select {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
-  border: 2px solid #c5cad3;
-  border-radius: 8px;
+  border: 2px solid #0e046446;
+  border-radius: 50px;
   background-color: #f1f3f7;
   color: #000000;
   text-align: center;

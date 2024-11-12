@@ -1,3 +1,6 @@
 [build]
 builder = "Nixpacks"
-rootDirectory = "backend"
+rootDirectory = "backend"  
+
+[nixpacks]
+plan = "java"

@@ -48,3 +48,10 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "org.menosprezo.systembarber.SystemBarberApplication" // Substitua com o caminho completo da sua classe principal
+    }
+    archiveFileName.set("SystemBarber.jar")
+}

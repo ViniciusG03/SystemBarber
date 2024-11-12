@@ -29,7 +29,7 @@ document.getElementById("buttonCadastrar").addEventListener("click", async funct
     };
 
     try {
-        const response = await fetch('http://localhost:8080/api/auth/cadastro', {
+        const response = await fetch('systembarber-production.up.railway.app/api/auth/cadastro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

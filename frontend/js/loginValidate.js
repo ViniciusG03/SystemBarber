@@ -17,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
             const data = await response.json();
             alert("Login realizado com sucesso!");
             localStorage.setItem("token", data.token); 
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
         } else {
             const errorData = await response.json();
             alert("Erro ao realizar login: " + errorData.message);

@@ -11,10 +11,8 @@
         <header>
             <nav>
                 <ul>
-                    <li>Seja Parte</li>
-                    <li>Home</li>
-                    <li>Entrar</li>
-                    <li><button>Cadastrar</button></li>
+                    <li><a href="sejaparte.html">Seja Parte</a></li>
+                    <li><a href="index.html">Home</a></li>
                 </ul>
             </nav>
             <div id="infoBarbearia">
@@ -35,7 +33,7 @@
                     <h1>Agendar Horário</h1>
                     <p>Gostou dos cortes? Agende já seu horário!</p>
                 </div>
-                <a href="AgendarCorte.html" class="botao-agendar">Agendar Horário</a>
+                <a href="#" id="botao-agendar" class="botao-agendar">Agendar Horário</a>
             </div>
         </section>
     </main>
@@ -56,10 +54,15 @@
     
                     const barbearia = await response.json();
     
+                    // Atualiza informações da barbearia
                     document.querySelector("#infoBarbearia h1").textContent = barbearia.nome;
                     document.querySelector("#infoBarbearia p:nth-of-type(1)").textContent = barbearia.localizacao;
                     document.querySelector("#infoBarbearia p:nth-of-type(2)").textContent = barbearia.formasPagamento || "Informações adicionais não disponíveis.";
-    
+
+                    // Define o link do botão de agendamento com o ID da barbearia
+                    const botaoAgendar = document.getElementById("botao-agendar");
+                    botaoAgendar.href = `AgendarCorte.html?id=${barbearia.id}`;
+
                 } catch (error) {
                     console.error("Erro ao carregar a barbearia:", error);
                 }

@@ -1,5 +1,4 @@
 async function cadastrarBarbearia() {
-    // Captura os valores dos campos do formulário
     const nome = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const telefone = document.getElementById("telefone").value;

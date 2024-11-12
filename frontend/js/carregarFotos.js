@@ -21,7 +21,7 @@ async function carregarImagensCortesMasculinos() {
 
         data.photos.forEach(photo => {
             const img = document.createElement('img');
-            img.src = photo.src.large;  // URL da imagem de tamanho médio
+            img.src = photo.src.large;  // URL da imagem de boa qualidade
             img.alt = 'Foto de corte masculino';
             galeria.appendChild(img);
         });

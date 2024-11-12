@@ -18,7 +18,7 @@ async function agendarHorario() {
     };
 
     try {
-        const response = await fetch("systembarber-production.up.railway.app/api/agendamentos", {
+        const response = await fetch("https://systembarber-production.up.railway.app/api/agendamentos", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

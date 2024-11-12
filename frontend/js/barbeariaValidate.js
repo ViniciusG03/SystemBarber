@@ -24,7 +24,7 @@ async function cadastrarBarbearia() {
 
     // Envia os dados para o backend usando fetch
     try {
-        const response = await fetch("systembarber-production.up.railway.app/api/barbearias", {
+        const response = await fetch("https://systembarber-production.up.railway.app/api/barbearias", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

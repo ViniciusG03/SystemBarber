@@ -1,4 +1,7 @@
 package org.menosprezo.systembarber.repository;
 
-public interface AgendamentoRepository {
+import org.menosprezo.systembarber.model.Agendamento;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AgendamentoRepository extends JpaRepository<Agendamento, Long> {
 }

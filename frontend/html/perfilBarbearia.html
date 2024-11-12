@@ -49,7 +49,7 @@
     
             if (id) {
                 try {
-                    const response = await fetch(`http://localhost:8080/api/barbearias/${id}`);
+                    const response = await fetch(`https://systembarber-production.up.railway.app/api/barbearias/${id}`);
                     
                     if (!response.ok) {
                         throw new Error('Barbearia não encontrada');

@@ -23,7 +23,7 @@ public class AuthController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    @CrossOrigin(origins = "http://localhost:5500")
+    @CrossOrigin(origins = "https://system-barber.vercel.app/")
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequest) {
         try {
@@ -37,7 +37,7 @@ public class AuthController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:5500")
+    @CrossOrigin(origins = "https://system-barber.vercel.app/")
     @PostMapping("/cadastro")
     public ResponseEntity<?> cadastrarUsuario(@RequestBody CadastroRequestDTO cadastroRequestDTO) {
         try {
@@ -51,7 +51,7 @@ public class AuthController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:5500")
+    @CrossOrigin(origins = "https://system-barber.vercel.app/")
     @PostMapping("/forgot-password")
     public ResponseEntity<?> forgotPassword(@RequestBody ForgotPasswordRequestDTO forgotPasswordRequestDTO) {
         try {
@@ -69,7 +69,7 @@ public class AuthController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:5500")
+    @CrossOrigin(origins = "https://system-barber.vercel.app/")
     @PostMapping("/reset-password")
     public ResponseEntity<?> resetPassword(@RequestBody ResetPasswordRequestDTO resetPasswordRequestDTO) {
         try {

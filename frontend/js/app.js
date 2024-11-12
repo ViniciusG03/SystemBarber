@@ -1,12 +1,10 @@
 async function buscarBarbearias() {
-    // Obtém a localidade digitada pelo usuário
     const localizacao = document.getElementById("localizacao").value;
 
     // Envia a requisição para o backend
     const response = await fetch(`https://systembarber-production.up.railway.app/api/barbearias/buscar?localizacao=${encodeURIComponent(localizacao)}`);
     const barbearias = await response.json();
 
-    // Limpa os resultados anteriores
     const resultados = document.getElementById("resultados");
     resultados.innerHTML = '';
 

@@ -1,6 +1,6 @@
 async function carregarImagensCortesMasculinos() {
     const apiKey = 'UBJusR1aDxFKz8L9uK1EB2THJfuJBPfdbWk80uiHmqncDksfCqcZtkxz'; 
-    const randomPage = Math.floor(Math.random() * 10) + 1;  // Gera um número aleatório de página entre 1 e 10
+    const randomPage = Math.floor(Math.random() * 10) + 1;
     const url = `https://api.pexels.com/v1/search?query=men's haircut&per_page=4&page=${randomPage}`;
 
     try {

@@ -9,7 +9,6 @@ async function cadastrarBarbearia() {
     const localizacao = document.getElementById("localizacao").value;
     const horarioFuncionamento = document.getElementById("horario_funcionamento").value;
 
-    // Cria um objeto com os dados do formulário
     const barbeariaData = {
         nome: nome,
         email: email,

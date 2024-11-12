@@ -22,7 +22,7 @@ async function buscarBarbearias() {
                 <p>Aberto: ${barbearia.horarioFuncionamento}</p>
                 <p>${barbearia.localizacao}</p>
                 <p>${barbearia.diasServico}</p> <br>
-                <a href="perfilBarbearia.html?id=${barbearia.id}">Conferir horários disponíveis -></a>
+                <a href="html/perfilBarbearia.html?id=${barbearia.id}">Conferir horários disponíveis -></a>
             </div>
         `;
 

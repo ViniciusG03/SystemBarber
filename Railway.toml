@@ -1,0 +1,3 @@
+[build]
+builder = "Nixpacks"
+rootDirectory = "backend"
